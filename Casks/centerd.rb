@@ -11,6 +11,16 @@ cask "centerd" do
 
   app "centerd.app"
 
+  # The app is self-signed, not notarized, so Gatekeeper would otherwise block it.
+  # Strip the quarantine attribute on install so it launches without the "damaged /
+  # cannot be opened" prompt. Users who prefer to vet it themselves can instead run
+  # `brew install --cask --no-quarantine centerd`.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/centerd.app"],
+                   sudo: false
+  end
+
   uninstall quit: "com.fefedimoraes.centerd"
 
   zap trash: [
