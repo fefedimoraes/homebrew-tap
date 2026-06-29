@@ -1,6 +1,6 @@
 cask "centerd" do
-  version "0.0.1"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.1.0"
+  sha256 "c0ab65ce55bf42352b6d7401257f3d2a7e03d9920b76ba2f051dc0d3f7a45162"
 
   url "https://github.com/fefedimoraes/centerd/releases/download/v#{version}/centerd-#{version}.zip"
   name "centerd"
