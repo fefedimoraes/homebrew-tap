@@ -7,7 +7,7 @@ cask "centerd" do
   desc "Jump to apps and windows with keyboard shortcuts, centering the mouse cursor"
   homepage "https://github.com/fefedimoraes/centerd"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "centerd.app"
 
